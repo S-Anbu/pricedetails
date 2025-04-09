@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const dotenv = require('dotenv');
 dotenv.config();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 const pricRroute= require('./Routes/priceRoutes');
 
 
