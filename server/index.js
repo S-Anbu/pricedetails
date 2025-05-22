@@ -13,7 +13,8 @@ const login= require('./Routes/adminRoutes.js');
 dbConnect()
 
 app.use(cors({
-  origin: "http://localhost:5173", // Your frontend URL
+  // origin: "http://localhost:5173", // Your frontend URL
+  origin: "https://aadhi-engineering-works.netlify.app/", // Your frontend URL
   credentials: true // Allow cookies
 }));
 app.use('/api', pricRroute);
