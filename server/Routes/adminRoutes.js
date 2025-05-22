@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const  admin  = require('../Controllers/adminController');
+const {login}  = require('../Controllers/adminContraller');
 
 
 
-router.get('/scrape-table', admin.getPriceDetails )
+router.post('/login', login )
 
 
 
