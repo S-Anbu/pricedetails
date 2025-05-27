@@ -1,22 +1,23 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 const dotenv = require('dotenv');
 dotenv.config();
 const dbConnect  = require('./db.js')
 const PORT = process.env.PORT || 4000;
 const pricRroute= require('./Routes/priceRoutes.js');
 const login= require('./Routes/adminRoutes.js');
-dbConnect()
 
 app.use(cors({
+  //  httpOnly:true,
   // origin: "http://localhost:5173", // Your frontend URL
-  origin: "https://aadhi-engineering-works.netlify.app/", // Your frontend URL
+  origin: "https://aadhi-engineering-works.onrender.com", // Your frontend URL
   credentials: true // Allow cookies
 }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+dbConnect()
 app.use('/api', pricRroute);
 app.use('/api', login);
 
